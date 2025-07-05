@@ -4,41 +4,11 @@
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   #contact-1388 {
-    padding-top: clamp(10rem, 25vw, 15rem);
-    padding-right: var(--sectionPaddingRight, 1rem);
-    padding-bottom: var(--sectionPaddingBottom, 3.75rem);
-    padding-left: var(--sectionPaddingLeft, 1rem);
-    background-color: #1a1a1a;
+    padding: var(--sectionPadding);
+    background-color: #f3fcfb;
     position: relative;
     z-index: 1;
-  }
-  #contact-1388 .cs-select {
-    font-size: 1rem;
-    width: 100%;
-    /* 46px - 56px */
-    height: clamp(2.875rem, 5.5vw, 3.5rem);
-    /* prevents padding from adding to height and width */
-    box-sizing: border-box;
-    padding: 0 1.5rem;
-    background-color: #fff;
-    color: #1a1a1a;
-    border: 1px solid #d1d1d1;
-    /* Add border to all inputs */
-    border-radius: 8px;
-    /* Consistent border radius */
-    transition: border-color 0.3s ease;
-    /* Smooth transition for hover/focus */
-    margin-top: 1rem;
-  }
-  #contact-1388 .cs-select:focus {
-    outline: none;
-    border-color: #eda708;
-    /* Gold border on focus - matches your brand color */
-    box-shadow: 0 0 0 2px rgba(237, 167, 8, 0.3);
-    /* Subtle glow effect */
-  }
-  #contact-1388 .cs-select::placeholder {
-    color: #767676;
+    padding-top: 150px;
   }
   #contact-1388 .cs-container {
     width: 100%;
@@ -63,12 +33,14 @@
     /* centers content horizontally, set to flex-start to left align */
     align-items: flex-start;
   }
+  #contact-1388 .cs-color {
+    color: red;
+  }
   #contact-1388 .cs-title {
     max-width: 23ch;
   }
   #contact-1388 .cs-text {
     margin-bottom: 1rem;
-    color: #f7f7f7;
   }
   #contact-1388 .cs-text:last-of-type {
     margin-bottom: 2rem;
@@ -107,7 +79,7 @@
     font-size: 1rem;
     line-height: 1.5em;
     text-decoration: none;
-    color: #f7f7f7;
+    color: #767676;
     display: block;
     position: relative;
   }
@@ -134,7 +106,7 @@
   }
   #contact-1388 .cs-form {
     width: 100%;
-    max-width: 39.375rem;
+    max-width: 40.625rem;
     /* 24px - 48px top and bottom */
     /* 16px - 48px left and right */
     padding: clamp(1.5rem, 5.18vw, 3rem) clamp(1rem, 4vw, 3rem);
@@ -154,7 +126,7 @@
     line-height: 1.2em;
     font-weight: 700;
     margin: 0 0 0.25rem 0;
-    color: #1a1a1a;
+    color: var(--headerColor);
   }
   #contact-1388 .cs-label {
     /* 14px - 16px */
@@ -166,7 +138,6 @@
     justify-content: center;
     align-items: flex-start;
     gap: 0.25rem;
-    margin-bottom: 0.125rem !important;
   }
   #contact-1388 .cs-input {
     font-size: 1rem;
@@ -174,19 +145,12 @@
     height: 3.5rem;
     padding: 0;
     padding-left: 1.5rem;
-    color: #1a1a1a;
-    background-color: #fff;
+    color: var(--headerColor);
+    background-color: #f7f7f7;
     border-radius: 0.5rem;
-    border: 1px solid #d1d1d1;
+    border: none;
     /* prevents padding from adding to height and width */
     box-sizing: border-box;
-  }
-  #contact-1388 .cs-input:focus {
-    outline: none;
-    border-color: #eda708;
-    /* Gold border on focus - matches your brand color */
-    box-shadow: 0 0 0 2px rgba(237, 167, 8, 0.3);
-    /* Subtle glow effect */
   }
   #contact-1388 .cs-input::placeholder {
     color: #7d799c;
@@ -197,6 +161,41 @@
     padding-top: 1.5rem;
     margin-bottom: 0.75rem;
     font-family: inherit;
+  }
+  #contact-1388 .cs-button-solid {
+    font-size: 1rem;
+    line-height: 3.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    overflow: hidden;
+    margin: 0;
+    color: #fff;
+    padding: 0 3rem;
+    border-radius: 1.875rem;
+    background-color: var(--primary);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s;
+  }
+  #contact-1388 .cs-button-solid:before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: #1a1a1a;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+  #contact-1388 .cs-button-solid:hover {
+    color: var(--primary);
+  }
+  #contact-1388 .cs-button-solid:hover:before {
+    width: 100%;
   }
   #contact-1388 .cs-submit {
     width: 100%;
@@ -211,7 +210,7 @@
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
   #contact-1388 {
-    padding-top: clamp(8rem, 15vw, 12rem);
+    padding-top: 200px;
   }
   #contact-1388 .cs-container {
     max-width: 80rem;
@@ -231,7 +230,7 @@
 @media only screen and (min-width: 64rem) {
   #contact-1388 .cs-form {
     width: 46%;
-    max-width: 36.125rem;
+    max-width: 40.625rem;
   }
   #contact-1388 .cs-submit {
     width: auto;
@@ -242,4 +241,57 @@
   #contact-1388 .cs-graphic {
     display: block;
   }
+}
+/*-- -------------------------- -->
+<---       WhatsApp Section     -->
+<--- -------------------------- -*/
+.cs-whatsapp-section {
+  background-color: #f7f7f7;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+.cs-whatsapp-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.cs-whatsapp-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.cs-whatsapp-text {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #666;
+  line-height: 1.6;
+}
+.cs-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+.cs-whatsapp-btn:hover {
+  background: #1da851;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+.cs-whatsapp-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
 }

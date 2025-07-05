@@ -3,173 +3,270 @@
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #hero-1295 {
-    /* 150px - 350px */
-    padding: clamp(9rem, 30.95vw, 21.875rem) 1rem;
-    padding-bottom: 3rem;
+  @keyframes floatAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-2rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes floatAnimation2 {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-3rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  #hero-1351 {
+    /* 250px - 500px - leaving extra space for the navigation */
+    padding: clamp(15.625rem, 35.95vw, 25rem) 1rem 0;
+    /* 200px - 250px */
+    padding-bottom: clamp(12.5rem, 16.5vw, 15.625rem);
+    padding-top: 13rem;
+    box-sizing: border-box;
+    overflow: hidden;
     position: relative;
     z-index: 1;
-    /* prevents overflow from the images sitting outside the screen */
-    overflow: hidden;
-    margin-bottom: -1px;
   }
-  #hero-1295 .cs-container {
+  #hero-1351:before {
+    /* Overlay */
+    content: "";
+    width: 100%;
+    height: 30%;
+    background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(rgba(0, 0, 0, 0)));
+    background: -o-linear-gradient(top, #000000 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(to bottom, #000000 0%, rgba(0, 0, 0, 0) 100%);
+    opacity: 1;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    /* prevents the cursor from interacting with it */
+    pointer-events: none;
+  }
+  #hero-1351 .cs-container {
     width: 100%;
     max-width: 80rem;
     margin: auto;
-    position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    /* 48px - 64px */
-    gap: clamp(3rem, 7vw, 4rem);
+    flex-direction: column;
+    align-items: flex-start;
   }
-  #hero-1295 .cs-content {
+  #hero-1351 .cs-content {
     /* set text align to left if content needs to be left aligned */
-    text-align: center;
+    text-align: left;
     width: 100%;
     max-width: 39.375rem;
     display: flex;
     flex-direction: column;
     /* centers content horizontally, set to flex-start to left align */
-    align-items: center;
-    position: relative;
-    z-index: 10;
+    align-items: flex-start;
   }
-  #hero-1295 .cs-topper {
-    font-size: var(--topperFontSize);
+  #hero-1351 .cs-topper {
+    font-size: 1.25rem;
     line-height: 1.2em;
     text-transform: uppercase;
-    text-align: center;
+    text-align: inherit;
     letter-spacing: 0.1em;
     font-weight: 700;
     color: var(--primary);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
     display: block;
   }
-  #hero-1295 .cs-title {
+  #hero-1351 .cs-title {
     /* 39px - 61px */
     font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
-    font-weight: 900;
+    font-weight: 700;
     line-height: 1.2em;
-    width: 110%;
-    max-width: 30ch;
-    margin: 0 0 1rem;
-    color: var(--headerColor);
+    text-align: inherit;
+    max-width: 20ch;
+    margin: 0 0 1rem 0;
+    color: #fff;
     position: relative;
   }
-  #hero-1295 .cs-text {
-    /* 16px - 20px */
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
+  #hero-1351 .cs-text {
+    font-size: 1.25rem;
     line-height: 1.5em;
+    text-align: inherit;
     width: 100%;
-    max-width: 43.75rem;
-    /* 28px - 40px */
-    margin: 0 0 clamp(1.75rem, 4vw, 2.5rem);
-    color: var(--primary);
+    /* 464px - 622px */
+    max-width: clamp(29rem, 60vw, 38.785rem);
+    margin: 0 0 2.5rem 0;
+    color: #e8e8e8;
   }
-  #hero-1295 .cs-picture {
-    width: 100%;
-    /* 427px - 468px */
-    max-width: clamp(26.6875rem, 50vw, 29.25rem);
-    height: auto;
-    display: flex;
-    align-items: flex-end;
-    position: relative;
-    z-index: 7;
-  }
-  #hero-1295 .cs-picture img {
-    width: 100%;
-    height: auto;
-  }
-  #hero-1295 .cs-floater {
-    width: 68.125rem;
-    height: auto;
-    opacity: 0.1;
-    display: none;
+  #hero-1351 .cs-bubbles {
+    /* this scales the children inside of it down. They're all in ems so they pull from the parent font size for their value of em, in this case, the value of em is tied to the viewwidth size and stops growing when the font size is equal to 1em, which it pulls from the nearst parent with a declred font size (which is the html tag, and that tag is 16px by default) */
+    font-size: min(2vw, .5em);
     position: absolute;
-    right: 0;
-    top: 4%;
-    z-index: 1;
-  }
-  #hero-1295 .cs-background {
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
     z-index: -1;
   }
-  #hero-1295 .cs-background:before {
-    /* background color overlay */
+  #hero-1351 .cs-bubbles1 {
+    width: 42.5em;
+    height: 45.25em;
+    right: -11.875rem;
+    /* changes to 172 at large desktop */
+    top: 0;
+  }
+  #hero-1351 .cs-bubbles1:before {
+    /* white border bubble */
     content: "";
+    width: 38.875em;
+    height: 38.875em;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    opacity: 1;
     position: absolute;
     display: block;
-    height: 100%;
-    width: 100%;
-    background: #1a1a1a;
-    opacity: 0.6;
     top: 0;
     left: 0;
-    z-index: 1;
+    animation-name: floatAnimation;
+    animation-duration: 7s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
   }
-  #hero-1295 .cs-background img {
+  #hero-1351 .cs-bubbles1:after {
+    /* orange bubble */
+    content: "";
+    width: 34.125em;
+    height: 34.125em;
+    background: var(--primary);
+    opacity: 0.8;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    animation-name: floatAnimation2;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+  #hero-1351 .cs-bubbles2 {
+    width: 20.625rem;
+    height: 29.75rem;
+    /* changes to 160px at larger desktop */
+    left: -13.75rem;
+    /* removed at larger desktop */
+    bottom: -16.25rem;
+  }
+  #hero-1351 .cs-bubbles2:before {
+    /* white border bubble */
+    content: "";
+    width: 20.625rem;
+    height: 20.625rem;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    opacity: 1;
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 0;
+    animation-name: floatAnimation;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+  #hero-1351 .cs-bubbles2:after {
+    /* orange bubble */
+    content: "";
+    width: 16.25rem;
+    height: 16.25rem;
+    background: var(--primary);
+    opacity: 0.8;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 2.5rem;
+    z-index: -1;
+    animation-name: floatAnimation2;
+    animation-duration: 14s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+  #hero-1351 .cs-background {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+  }
+  #hero-1351 .cs-background img {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    /* Makes img tag act as a background image */
     object-fit: cover;
+    /* makes the top of the image start at the top of the parent */
+    object-position: top;
   }
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-  #hero-1295 {
-    padding-bottom: 9.375rem;
-  }
-  #hero-1295 .cs-container {
-    justify-content: flex-start;
-    flex-direction: row;
-  }
-  #hero-1295 .cs-content {
-    text-align: left;
-    width: 60%;
-    align-items: flex-start;
-  }
-  #hero-1295 .cs-picture {
+  #hero-1351 .cs-content {
     width: 50%;
-    position: absolute;
-    bottom: -9.4375rem;
-    right: -3.125rem;
   }
-  #hero-1295 .cs-floater {
-    display: block;
+  #hero-1351 .cs-bubbles {
+    font-size: 1em;
   }
-  #hero-1295 .cs-background {
-    overflow: hidden;
+  #hero-1351 .cs-bubbles1 {
+    /* changes to auto at large desktop */
+    right: -26.75rem;
   }
 }
-/* Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-  #hero-1295 .cs-floater {
-    right: clamp(45%, 50vw, 55%);
-    top: auto;
-    bottom: 0;
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #hero-1351 {
+    padding-top: 17rem;
+  }
+  #hero-1351 .cs-bubbles1 {
+    /* 200px - 450px */
+    margin-left: clamp(12.5rem, 20vw, 28.125rem);
+    top: 10.75rem;
+    right: auto;
+    left: 50%;
   }
 }
-/* Large Desktop - 1600px (Parallax Effect) */
+/* Large Desktop Parallax Effect - 1600px */
 @media only screen and (min-width: 100rem) {
-  #hero-1295 .cs-background {
-    background: url("/assets/images/homepage-hero-image.jpg");
+  #hero-1351 .cs-background {
+    background: url("/assets/images/abstract.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
-  #hero-1295 .cs-background img {
+  #hero-1351 .cs-background img {
     display: none;
+  }
+}
+/* Larger Desktop - 1800px */
+@media only screen and (min-width: 112.5rem) {
+  #hero-1351 .cs-bubbles2 {
+    margin-right: 50rem;
+    right: 50%;
+    left: auto;
+    top: 13.125rem;
+    bottom: auto;
   }
 }
