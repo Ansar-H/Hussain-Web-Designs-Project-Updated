@@ -23,31 +23,31 @@ function ariaExpanded() {
     }
 }
 
-// mobile nav toggle code - FIXED VERSION
+// mobile nav toggle code - ALTERNATIVE SOLUTION
 const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
 for (const item of dropDowns) {
-    const dropdownLink = item.querySelector('.cs-li-link');
+    const dropdownIcon = item.querySelector('.cs-drop-icon');
     
-    const onClick = (e) => {
-        // Only prevent default on mobile/tablet (when mobile menu is active)
-        if (window.innerWidth <= 1023.5) {
-            e.preventDefault(); // This prevents the link from navigating
-            
-            // Toggle this dropdown
-            item.classList.toggle('cs-active');
-            
-            // Close other dropdowns
-            dropDowns.forEach(otherDropdown => {
-                if (otherDropdown !== item) {
-                    otherDropdown.classList.remove('cs-active');
-                }
-            });
-        }
-        // On desktop (> 1023.5px), let the link work normally
+    // Add click event only to the dropdown icon, not the entire link
+    if (dropdownIcon) {
+        dropdownIcon.addEventListener('click', (e) => {
+            // Only handle dropdown behavior on mobile/tablet
+            if (window.innerWidth <= 1023.5) {
+                e.preventDefault();
+                e.stopPropagation(); // Prevent event bubbling to the link
+                
+                // Toggle this dropdown
+                item.classList.toggle('cs-active');
+                
+                // Close other dropdowns
+                dropDowns.forEach(otherDropdown => {
+                    if (otherDropdown !== item) {
+                        otherDropdown.classList.remove('cs-active');
+                    }
+                });
+            }
+        });
     }
-    
-    // Add event listener to the link, not the dropdown container
-    dropdownLink.addEventListener('click', onClick);
 }
 
 // after scrolling down 100px, add .scroll class to the #cs-navigation
