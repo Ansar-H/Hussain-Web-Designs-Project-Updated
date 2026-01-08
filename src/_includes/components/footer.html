@@ -89,8 +89,13 @@
         <!--Bottom Section-->
         <div class="cs-bottom">
             <span class="cs-copyright">
-                © Copyright 2025 | <a href="https://hussainwebdesigns.co.uk" target="_blank" rel="noopener" class="cs-copyright-link">Hussain Web Designs</a>
+                © Copyright <span id="current-year"></span> | <a href="https://hussainwebdesigns.co.uk" target="_blank" rel="noopener" class="cs-copyright-link">Hussain Web Designs</a>
             </span>
         </div>
     </div>
 </footer>
+
+<script>
+    // Automatically update the copyright year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
