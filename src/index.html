@@ -1,6 +1,6 @@
 ---
-title: "Hussain Web Designs | Complete Digital Solutions For Small Businesses"
-description: "Professional digital services that are designed to help your business get found online, build trust with customers, and grow your local presence"
+title: "Web Design Agency Bristol | More Enquiries for Local Businesses"
+description: "Bristol web design agency helping local businesses get more enquiries through fast websites, Google Business optimisation, and local SEO."
 preloadImg: "/assets/images/abstract.jpg"
 permalink: "/"
 tags: "sitemap" # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
@@ -32,41 +32,30 @@ eleventyNavigation:
 
 <!-- JSON Schema Markup -->
 <script type="application/ld+json">
-  {
-      "@context": "http://schema.org",
-      "@type": "LocalBusiness",
-      "name": "{{ client.name }}",
-      {% if preloadImg %}"image": "{{ preloadImg }}",{% endif %}
-      {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
-      {% if client.email %}"email": "{{ client.email }}",{% endif %}
-      {% if client.address %}
-          "address": {
-              "@type": "PostalAddress"{% if client.address.lineOne %},
-                  "streetAddress": "{{ client.address.lineOne }}{% if client.address.lineTwo %}, {{ client.address.lineTwo }}{% endif %}"
-              {% endif %}
-              {% if client.address.city %},
-                  "addressLocality": "{{ client.address.city }}"
-              {% endif %}
-              {% if client.address.state %},
-                  "addressRegion": "{{ client.address.state }}"
-              {% endif %}
-              {% if client.address.zip %},
-                  "postalCode": "{{ client.address.zip }}"
-              {% endif %}
-              {% if client.address.country %},
-                  "addressCountry": "{{ client.address.country }}"
-              {% endif %}
-          },
-      {% endif %}
-      {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
-      {% if client.socials %}
-          "sameAs": [{% for platform, url in client.socials %}
-                  {% if not loop.first %},{% endif %}
-                  "{{ url }}"
-              {% endfor %}]
-      {% endif %}
-  }
+    {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "{{ client.name }}",
+    "url": "{{ client.domain }}{{ page.url }}",
+    "telephone": "{{ client.phoneFormatted }}",
+    "email": "{{ client.email }}",
+    "image": "{{ client.domain }}{{ preloadImg }}",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "{{ client.address.city }}",
+        "addressCountry": "{{ client.address.country }}"
+    },
+    "areaServed": {
+        "@type": "City",
+        "name": "{{ client.address.city }}"
+    },
+    "sameAs": [
+        "{{ client.socials.facebook }}",
+        "{{ client.socials.instagram }}"
+    ]
+    }
 </script>
+
 {% endblock %} {% block body %}
 
 <!-- ============================================ -->
@@ -76,12 +65,12 @@ eleventyNavigation:
 <section id="hero-1351">
     <div class="cs-container">
         <div class="cs-content">
-            <span class="cs-topper">Hussain web designs</span>
-            <h1 class="cs-title">Complete Digital Solutions For Small Businesses</h1>
+            <span class="cs-topper">Hussain Web Designs</span>
+            <h1 class="cs-title">Small Business <br>Web Design Agency <br>Based in Bristol</h1>
             <p class="cs-text">
-                Get everything you need to dominate your local market with a stunning custom website, a professional Google Business profile, and an automated review collection system. Plus expert branding and design services.
+                We create fast, custom-coded websites for businesses across Bristol, designed to build trust and turn visitors into calls and enquiries. Clear messaging, mobile-first layouts, and a simple journey that makes it easy for customers to get in contact.
             </p>
-            <a href="/contact" class="cs-button-solid cs-button-solid-left">Contact Us</a>
+            <a href="/contact" class="cs-button-solid cs-button-solid-left">Get Started</a>
         </div>
     </div>
     <!--Bubble Groups-->
@@ -91,7 +80,7 @@ eleventyNavigation:
     <picture class="cs-background">
         <source media="(max-width: 600px)" srcset="/assets/images/abstract-m.jpg">
         <source media="(min-width: 601px)" srcset="/assets/images/abstract.jpg">
-        <img decoding="async" src="/assets/images/abstract.jpg" alt="abstract background" width="2250" height="1500" aria-hidden="true">
+        <img decoding="async" src="/assets/images/abstract.jpg" alt="" width="2250" height="1500" aria-hidden="true">
     </picture>
 </section>
 
@@ -105,25 +94,25 @@ eleventyNavigation:
             <span class="cs-topper">Our Services</span>
             <h2 class="cs-title">How We Help Your Business Grow</h2>
             <p class="cs-text">
-                Professional digital services designed to help your business get found online, build trust with customers, and grow your local presence
+                Everything we build is designed to help local customers find and choose your business over competitors.
             </p>
         </div>
         <ul class="cs-card-group">
             <li class="cs-item">
-                <a class="cs-link" href="">
+                <a class="cs-link" href="/website-design">
                     <picture class="cs-icon-wrapper">
-                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/website.svg" alt="website" width="48" height="48">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/website.svg" alt="" width="48" height="48">
                     </picture>
                     <h3 class="cs-h3">Custom Hand-Coded Websites</h3>
                     <p class="cs-item-text">
-                        Hand-crafted websites built with clean HTML and CSS. Lightning-fast loading times, mobile-responsive design, and optimised for search engines to help customers find you easily and convert into paying customers.
+                        Hand-crafted websites built with clean HTML and CSS. Lightning-fast loading times, mobile-responsive design, and optimised for search engines to help prospects find you easily and convert into paying customers.
                     </p>
                 </a>
             </li>
             <li class="cs-item">
-                <a class="cs-link" href="">
+                <a class="cs-link" href="/google-business-setup">
                     <picture class="cs-icon-wrapper">
-                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/google-search.svg" alt="google search" width="48" height="48">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/google-search.svg" alt="" width="48" height="48">
                     </picture>
                     <h3 class="cs-h3">Google Business Profile Setup & Optimisation</h3>
                     <p class="cs-item-text">
@@ -132,9 +121,9 @@ eleventyNavigation:
                 </a>
             </li>
             <li class="cs-item">
-                <a class="cs-link" href="">
+                <a class="cs-link" href="/complete-digital-package">
                     <picture class="cs-icon-wrapper">
-                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/star.svg" alt="star" width="48" height="48">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/star.svg" alt="" width="48" height="48">
                     </picture>
                     <h3 class="cs-h3">Automated Review Collection System</h3>
                     <p class="cs-item-text">
@@ -143,9 +132,9 @@ eleventyNavigation:
                 </a>
             </li>
             <li class="cs-item">
-                <a class="cs-link" href="">
+                <a class="cs-link" href="/complete-digital-package">
                     <picture class="cs-icon-wrapper">
-                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/map.svg" alt="map" width="48" height="48">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/map.svg" alt="" width="48" height="48">
                     </picture>
                     <h3 class="cs-h3">Service Area Mapping & Display</h3>
                     <p class="cs-item-text">
@@ -154,9 +143,9 @@ eleventyNavigation:
                 </a>
             </li>
             <li class="cs-item">
-                <a class="cs-link" href="">
+                <a class="cs-link" href="/logo-branding">
                     <picture class="cs-icon-wrapper">
-                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/design.svg" alt="design" width="48" height="48">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/design.svg" alt="" width="48" height="48">
                     </picture>
                     <h3 class="cs-h3">Logo Design & Brand Identity</h3>
                     <p class="cs-item-text">
@@ -165,9 +154,9 @@ eleventyNavigation:
                 </a>
             </li>
             <li class="cs-item">
-                <a class="cs-link" href="">
+                <a class="cs-link" href="/complete-digital-package">
                     <picture class="cs-icon-wrapper">
-                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/seo.svg" alt="seo" width="48" height="48">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/seo.svg" alt="" width="48" height="48">
                     </picture>
                     <h3 class="cs-h3">Local SEO Optimisation</h3>
                     <p class="cs-item-text">
@@ -206,7 +195,7 @@ eleventyNavigation:
             <span class="cs-topper">Complete Digital Package</span>
             <h2 class="cs-title">Complete Digital Solutions</h2>
             <p class="cs-text">
-                We believe local businesses deserve a complete online presence, so our digital package includes a custom hand-coded website, Google Business Profile optimisation, automated review collection system, service area mapping, and maintenance. Everything you need to attract more local customers and grow your business online.
+                We believe local businesses deserve a complete online presence, so our digital package includes a custom hand-coded website, Google Business Profile optimisation, automated review collection system, service area mapping, and monthly maintenance. Everything you need to attract more local customers and grow your business online.
             </p>
             <ul class="cs-card-group">
                 <li class="cs-item">
@@ -277,7 +266,7 @@ eleventyNavigation:
             <div class="cs-item-text">
               <div class="cs-flex">
                 <h3 class="cs-h3">Noble Autos</h3>
-                <span class="cs-desc">A vehicle customisation business serving the Southwest of the UK</span>
+                <span class="cs-desc">A mobile mechanic and car customisation business serving Bristol and the surrounding areas</span>
               </div>
               <picture class="cs-icon-wrapper">
                 <img class="cs-icon" decoding="async" src="/assets/svgs/upper-right-arrow2.svg" alt="arrow" width="413" height="374" aria-hidden="true">
@@ -296,7 +285,7 @@ eleventyNavigation:
             <div class="cs-item-text">
               <div class="cs-flex">
                 <h3 class="cs-h3">Safe & Secure 24/7</h3>
-                <span class="cs-desc">A window and door solutions company based in the South of the UK</span>
+                <span class="cs-desc">A window and door solutions company based in Bristol</span>
               </div>
               <picture class="cs-icon-wrapper">
                 <img class="cs-icon" decoding="async" src="/assets/svgs/upper-right-arrow2.svg" alt="arrow" width="413" height="374" aria-hidden="true">
@@ -315,7 +304,7 @@ eleventyNavigation:
             <div class="cs-item-text">
               <div class="cs-flex">
                 <h3 class="cs-h3">Southwest Prestige Hire</h3>
-                <span class="cs-desc">A luxury car hire company based in the Southwest of the UK</span>
+                <span class="cs-desc">A luxury car hire company based in Bristol</span>
               </div>
               <picture class="cs-icon-wrapper">
                 <img class="cs-icon" decoding="async" src="/assets/svgs/upper-right-arrow2.svg" alt="arrow" width="413" height="374" aria-hidden="true">
@@ -335,7 +324,7 @@ eleventyNavigation:
     <div class="cs-container">
         <div class="cs-content">
             <span class="cs-topper">Our Reviews</span>
-            <h2 class="cs-title">What Our Client’s Say About Us</h2>
+            <h2 class="cs-title">What Our Clients Say About Us</h2>
             <p class="cs-text">
                 Real feedback from local business owners who've transformed their online presence with our complete digital package and seen genuine results in customer growth.
             </p>

@@ -73,7 +73,7 @@
     align-items: flex-start;
   }
   #hero-1351 .cs-topper {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     line-height: 1.2em;
     text-transform: uppercase;
     text-align: inherit;
@@ -84,19 +84,19 @@
     display: block;
   }
   #hero-1351 .cs-title {
-    /* 39px - 61px */
-    font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+    /* 32px - 61px */
+    font-size: clamp(2rem, 6.4vw, 3.8125rem);
     font-weight: 700;
-    line-height: 1.2em;
+    line-height: 1.3em;
     text-align: inherit;
-    max-width: 20ch;
-    margin: 0 0 1rem 0;
+    max-width: 100%;
+    margin: 0 0 1.25rem 0;
     color: #fff;
     position: relative;
   }
   #hero-1351 .cs-text {
-    font-size: 1.25rem;
-    line-height: 1.5em;
+    font-size: 1.125rem;
+    line-height: 1.6em;
     text-align: inherit;
     width: 100%;
     /* 464px - 622px */
@@ -225,6 +225,9 @@
 @media only screen and (min-width: 48rem) {
   #hero-1351 .cs-content {
     width: 50%;
+  }
+  #hero-1351 .cs-title {
+    max-width: 20ch;
   }
   #hero-1351 .cs-bubbles {
     font-size: 1em;
